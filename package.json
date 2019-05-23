@@ -5,7 +5,7 @@
   "bugs": {
     "url": "https://github.com/basselalaraaj/rollup-plugin-exclude-dependencies-from-bundle/issues"
   },
-  "homepage": "https://github.com/basselalaraaj/rollup-plugin-exclude-dependencies-from-bundle#readme",
+  "homepage": "https://basselalaraaj.github.io/rollup-plugin-exclude-dependencies-from-bundle",
   "author": "Bassel Al Araaj",
   "repository": {
     "type": "git",
