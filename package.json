@@ -1,0 +1,61 @@
+{
+  "name": "rollup-plugin-exclude-dependencies-from-bundle",
+  "version": "1.0.0",
+  "description": "Rollup plugin to automatically add a library's peerDependencies and Dependencies to its bundle's external config.",
+  "bugs": {
+    "url": "https://github.com/basselalaraaj/rollup-plugin-exclude-dependencies-from-bundle/issues"
+  },
+  "homepage": "https://github.com/basselalaraaj/rollup-plugin-exclude-dependencies-from-bundle#readme",
+  "author": "Bassel Al Araaj",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basselalaraaj/rollup-plugin-exclude-dependencies-from-bundle.git"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "rollup-plugin",
+    "dependencies",
+    "exclude",
+    "bundle"
+  ],
+  "files": [
+    "src",
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clear": "rimraf ./dist",
+    "build": "rollup -c",
+    "format": "prettier --write --single-quote --trailing-comma es5",
+    "format:all": "yarn format \"src/**/*.js\"",
+    "precommit": "lint-staged",
+    "prepublishOnly": "yarn test && yarn build",
+    "test": "jest"
+  },
+  "main": "./dist/rollup-plugin-exclude-dependencies-from-bundle.js",
+  "module": "./dist/rollup-plugin-exclude-dependencies-from-bundle.module.js",
+  "license": "MIT",
+  "peerDependencies": {
+    "rollup": "*"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.5",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.12.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-typescript2": "^0.21.1",
+    "semantic-release": "^15.13.12",
+    "semantic-release-github-pr": "^5.1.0",
+    "typescript": "^3.4.5"
+  }
+}
