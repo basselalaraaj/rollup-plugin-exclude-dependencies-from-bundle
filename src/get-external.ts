@@ -14,7 +14,7 @@ const getExternal = (modules: string[] = []): string[] | ((module: string) => bo
 
   const peerDependencies = getDeps(packageFile.peerDependencies);
   const dependencies = getDeps(packageFile.dependencies);
-  const externalModules: string[] = [...modules, ...peerDependencies, ...dependencies];
+  const externalModules: string[] = modules.concat(peerDependencies, dependencies);
 
   const regexps = externalModules.map(externalModule => new RegExp("^" + externalModule + "(\\/.+)*$"));
   return module => regexps.some(regexp => regexp.test(module));
