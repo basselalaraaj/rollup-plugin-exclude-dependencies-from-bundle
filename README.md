@@ -17,6 +17,16 @@ npm install --save-dev rollup-plugin-exclude-dependencies-from-bundle
 import excludeDependenciesFromBundle from "rollup-plugin-exclude-dependencies-from-bundle";
 
 export default {
-  plugins: [excludeDependenciesFromBundle()]
+  plugins: [excludeDependenciesFromBundle(/*{ plugin options }*/)]
 };
 ```
+
+### Plugin options
+
+- `peerDependencies`: true
+
+      	Set to true for excluding peer dependencies from the bundled files.
+
+- `dependencies`: true
+
+      	Set to true for excluding dependencies from the bundled files.
