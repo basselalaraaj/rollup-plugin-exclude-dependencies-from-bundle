@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-exclude-dependencies-from-bundle",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Rollup plugin to automatically add a library's peerDependencies and Dependencies to its bundle's external config.",
   "bugs": {
     "url": "https://github.com/basselalaraaj/rollup-plugin-exclude-dependencies-from-bundle/issues"
@@ -29,7 +29,7 @@
     "clear": "rimraf ./dist",
     "build": "rollup -c",
     "format": "prettier --write --single-quote --trailing-comma es5",
-    "format:all": "yarn format \"src/**/*.js\"",
+    "format:all": "yarn format \"src/**/*.ts\"",
     "precommit": "lint-staged",
     "prepublishOnly": "yarn test && yarn build",
     "test": "jest"
@@ -41,21 +41,19 @@
     "rollup": "*"
   },
   "devDependencies": {
-    "@babel/cli": "7.4.4",
-    "@babel/core": "7.4.5",
-    "@babel/preset-env": "7.4.5",
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
     "@babel/preset-typescript": "^7.3.3",
-    "husky": "^2.3.0",
+    "husky": "^3.0.0",
     "jest": "^24.8.0",
-    "lint-staged": "^8.1.7",
-    "prettier": "^1.17.1",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
-    "rollup": "^1.12.3",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-node-resolve": "^5.0.0",
-    "rollup-plugin-typescript2": "^0.21.1",
-    "semantic-release": "^15.13.12",
-    "semantic-release-github-pr": "^5.1.0",
-    "typescript": "^3.4.5"
+    "rollup": "^1.16.7",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.22.0",
+    "typescript": "^3.5.3"
   }
 }

@@ -1,16 +1,20 @@
-import getExternal from "./get-external";
+import getExternal from './get-external';
 
 const ExcludeDependenciesFromBundlePlugin = ({
   peerDependencies,
-  dependencies
+  dependencies,
 }: { peerDependencies?: boolean; dependencies?: boolean } = {}) => {
   return {
-    name: "exclude-dependencies-from-bundle",
+    name: 'exclude-dependencies-from-bundle',
     options: opts => {
-      opts.external = getExternal(opts.external, peerDependencies, dependencies);
+      opts.external = getExternal(
+        opts.external,
+        peerDependencies,
+        dependencies
+      );
 
       return opts;
-    }
+    },
   };
 };
 
