@@ -27,9 +27,9 @@ const getExternal = (
   );
 
   const regexps = externalModules.map(
-    externalModule => new RegExp('^' + externalModule + '(\\/.+)*$')
+    (externalModule) => new RegExp('^' + externalModule + '(\\/.+)*$')
   );
-  return module => regexps.some(regexp => regexp.test(module));
+  return (module) => regexps.some((regexp) => regexp.test(module));
 };
 
 export default getExternal;

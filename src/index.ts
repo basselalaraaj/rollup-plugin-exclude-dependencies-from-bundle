@@ -6,7 +6,7 @@ const ExcludeDependenciesFromBundlePlugin = ({
 }: { peerDependencies?: boolean; dependencies?: boolean } = {}) => {
   return {
     name: 'exclude-dependencies-from-bundle',
-    options: opts => {
+    options: (opts) => {
       opts.external = getExternal(
         opts.external,
         peerDependencies,
