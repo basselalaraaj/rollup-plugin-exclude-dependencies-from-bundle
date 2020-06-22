@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-exclude-dependencies-from-bundle",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Rollup plugin to automatically add a library's peerDependencies and Dependencies to its bundle's external config.",
   "bugs": {
     "url": "https://github.com/basselalaraaj/rollup-plugin-exclude-dependencies-from-bundle/issues"
@@ -41,19 +41,19 @@
     "rollup": "*"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.9.5",
-    "@babel/preset-typescript": "^7.7.4",
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1",
     "husky": "^4.2.5",
-    "jest": "^25.4.0",
-    "lint-staged": "^10.1.7",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
-    "rollup": "^2.7.1",
+    "rollup": "^2.18.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-typescript2": "^0.27.0",
-    "typescript": "^3.8.3"
+    "rollup-plugin-typescript2": "^0.27.1",
+    "typescript": "^3.9.5"
   }
 }
