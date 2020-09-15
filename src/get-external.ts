@@ -1,35 +1,31 @@
-const path = require('path');
+const path = require("path");
 
-const getDeps = (deps: { string: string }, includeFlag = true): string[] => {
-  if (!deps || !includeFlag) {
-    return [];
-  }
-
-  return Object.keys(deps);
-};
+const getDeps = (dependencies: Array<string>, includeFlag = true) =>
+  !dependencies || !includeFlag ? [] : Object.keys(dependencies);
 
 const getExternal = (
   modules: string[] = [],
-  peerDependencies = true,
-  dependencies = true
+  peerDependenciesFlag = true,
+  dependenciesFlag = true
 ): string[] | ((module: string) => boolean) => {
-  const packageFilePath: string = path.resolve(process.cwd(), 'package.json');
+  const packageFilePath: string = path.resolve(process.cwd(), "package.json");
   const packageFile = require(packageFilePath);
 
   const peerDependenciesKeys = getDeps(
     packageFile.peerDependencies,
-    peerDependencies
+    peerDependenciesFlag
   );
-  const dependenciesKeys = getDeps(packageFile.dependencies, dependencies);
-  const externalModules: string[] = modules.concat(
-    peerDependenciesKeys,
-    dependenciesKeys
-  );
+  const dependenciesKeys = getDeps(packageFile.dependencies, dependenciesFlag);
 
-  const regexps = externalModules.map(
-    (externalModule) => new RegExp('^' + externalModule + '(\\/.+)*$')
-  );
-  return (module) => regexps.some((regexp) => regexp.test(module));
+  const externalModules = [
+    ...modules,
+    ...peerDependenciesKeys,
+    ...dependenciesKeys,
+  ]
+    .filter((module) => module)
+    .map((externalModule) => new RegExp("^" + externalModule + "(\\/.+)*$"));
+
+  return (module) => externalModules.some((regexp) => regexp.test(module));
 };
 
 export default getExternal;

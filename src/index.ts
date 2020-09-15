@@ -1,21 +1,19 @@
 import getExternal from './get-external';
 
-const ExcludeDependenciesFromBundlePlugin = ({
+interface ExcludeDependenciesFromBundlePlugin {
+  peerDependencies?: boolean;
+  dependencies?: boolean;
+}
+
+export default function ({
   peerDependencies,
   dependencies,
-}: { peerDependencies?: boolean; dependencies?: boolean } = {}) => {
+}: ExcludeDependenciesFromBundlePlugin = {}) {
   return {
     name: 'exclude-dependencies-from-bundle',
-    options: (opts) => {
-      opts.external = getExternal(
-        opts.external,
-        peerDependencies,
-        dependencies
-      );
-
-      return opts;
-    },
+    options: (opts) => ({
+      ...opts,
+      external: getExternal(opts.external, peerDependencies, dependencies),
+    }),
   };
-};
-
-export default ExcludeDependenciesFromBundlePlugin;
+}
