@@ -28,11 +28,9 @@
   "scripts": {
     "clear": "rimraf ./dist",
     "build": "rollup -c",
-    "format": "prettier --write --single-quote --trailing-comma es5",
-    "format:all": "yarn format \"src/**/*.ts\"",
-    "precommit": "lint-staged",
     "prepublishOnly": "yarn test && yarn build",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint . --ext .ts"
   },
   "main": "./dist/rollup-plugin-exclude-dependencies-from-bundle.js",
   "module": "./dist/rollup-plugin-exclude-dependencies-from-bundle.module.js",
@@ -45,6 +43,9 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.12.7",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "^7.17.0",
     "husky": "^4.3.6",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.3",
