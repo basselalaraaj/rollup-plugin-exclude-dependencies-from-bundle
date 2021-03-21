@@ -5,10 +5,15 @@ interface ExcludeDependenciesFromBundlePlugin {
   dependencies?: boolean;
 }
 
+type Plugin = {
+  name: string;
+  options: (opts: { external: string[] }) => Record<string, unknown>;
+};
+
 export default function ({
   peerDependencies,
   dependencies,
-}: ExcludeDependenciesFromBundlePlugin = {}) {
+}: ExcludeDependenciesFromBundlePlugin = {}): Plugin {
   return {
     name: "exclude-dependencies-from-bundle",
     options: (opts) => ({
