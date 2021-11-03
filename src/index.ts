@@ -1,4 +1,4 @@
-import getExternal from "./get-external";
+import { getExternal } from "./get-external";
 
 interface ExcludeDependenciesFromBundlePlugin {
   peerDependencies?: boolean;

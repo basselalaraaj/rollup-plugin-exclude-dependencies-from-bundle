@@ -3,7 +3,7 @@ import * as path from "path";
 const getDeps = (dependencies: Array<string>, includeFlag = true) =>
   !dependencies || !includeFlag ? [] : Object.keys(dependencies);
 
-const getExternal = (
+export const getExternal = (
   modules: string[] = [],
   peerDependenciesFlag = true,
   dependenciesFlag = true
@@ -28,5 +28,3 @@ const getExternal = (
 
   return (module) => externalModules.some((regexp) => regexp.test(module));
 };
-
-export default getExternal;
