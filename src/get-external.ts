@@ -9,7 +9,6 @@ export const getExternal = (
   dependenciesFlag = true
 ): string[] | ((module: string) => boolean) => {
   const packageFilePath: string = path.resolve(process.cwd(), "package.json");
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const packageFile = require(packageFilePath);
 
   const peerDependenciesKeys = getDeps(
